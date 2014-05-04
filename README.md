@@ -22,7 +22,8 @@ http://youtu.be/NTs2COXxrrA
 # Requirements
 
 
-* Requires either iOS 5.0 and above (Please uncheck the Use AutoLayout in the property inspector of The UIStoryboard) ![Preview](http://i1102.photobucket.com/albums/g447/michaelhenry119/IOS%20Controls/MHFacebookImageViewer/ScreenShot2013-06-24at33149PM_zpsec274276.png)
+* Current version can run from iOS 5 to iOS 7 (But must be build < XCode 4.6.x)
+* Please uncheck the Use AutoLayout in the property inspector of The UIStoryboard for IOS 5 Support ![Preview](http://i1102.photobucket.com/albums/g447/michaelhenry119/IOS%20Controls/MHFacebookImageViewer/ScreenShot2013-06-24at33149PM_zpsec274276.png)
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking) - for image lazy loading
 
 
@@ -76,6 +77,12 @@ or if you want to load other image (for example a hi-res version of that image)
 	    imageView.clipsToBounds = YES;
 	    return cell;
 	}
+
+### If you want to include multiple images, Here is the DataSource Protocol or look for the sample project included in this repo.
+	
+	- (NSInteger) numberImagesForImageViewer:(MHFacebookImageViewer*) imageViewer;
+	- (NSURL*) imageURLAtIndex:(NSInteger)index imageViewer:(MHFacebookImageViewer*) imageViewer;
+	- (UIImage*) imageDefaultAtIndex:(NSInteger)index imageViewer:(MHFacebookImageViewer*) imageViewer;
 
 ### That's it. :)
 
